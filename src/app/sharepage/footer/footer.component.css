@@ -1,12 +1,10 @@
 footer {
-    position: fixed;
-    bottom: 0;
-
     width: 100%;
     height: auto;
     background-color: #3a3a3a;
     padding-top: 10px;
     color: #ffe4c4;
+    margin-top: 50px;
 }
 
 footer .box {
@@ -158,10 +156,6 @@ footer .copyright {
         list-style: none;
         text-align: center;
         line-height: 40px;
-    }
-
-    footer .box .links .menu-footer li a {
-        font-size: 1.5rem;
     }
 
     footer .box .social {
