@@ -25,3 +25,17 @@
         </div>
     </div>
 </div>
+
+<div class="cardapio">
+    <h2>Nosso Cardápio</h2>
+
+    <div class="container">
+        <div class="box" *ngFor="let fd of foodData.slice(0,4)">
+            <img src="{{ fd.foodImg }}" alt="" />
+            <h4>{{ fd.foodName }}</h4>
+            <p class="price">{{ fd.foodPrice | currency:'BRL' }}</p>
+        </div>
+    </div>
+
+    <button routerLink="menu">+ Opções</button>
+</div>

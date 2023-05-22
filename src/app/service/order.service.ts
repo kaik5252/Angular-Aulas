@@ -13,7 +13,42 @@ export class OrderService {
       foodName: "Sanduíche Natural de Frango",
       foodDetails: "Sanduíche feito de frango com catupiry",
       foodPrice: 20,
-      foodImg: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fassets.unileversolutions.com%2Frecipes-v2%2F106678.jpg&tbnid=sYizNzdlZypT8M&vet=12ahUKEwi-vI-8lIL_AhUZAbkGHVQwDaQQMygAegUIARCGAg..i&imgrefurl=https%3A%2F%2Fwww.recepedia.com%2Fpt-br%2Freceita%2Fsanduiche%2F106678-sanduiche-de-frango-com-hortela%2F&docid=2lAGEDMrEcD_qM&w=3000&h=1988&q=sanduiche%20de%20frango&client=opera-gx&ved=2ahUKEwi-vI-8lIL_AhUZAbkGHVQwDaQQMygAegUIARCGAg"
+      foodImg: "https://assets.unileversolutions.com/recipes-v2/106678.jpg"
+    },
+    {
+      id: 2,
+      foodName: "Cachorro Quente de Forno",
+      foodDetails: "Cachorro quente com salsichas e condimentos",
+      foodPrice: 8,
+      foodImg: "https://guiadacozinha.com.br/wp-content/uploads/2019/10/cachorro-quente-de-forno.jpg"
+    },
+    {
+      id: 3,
+      foodName: "Pastel de Forno",
+      foodDetails: "Pastel com frango e catupiry com condimentos",
+      foodPrice: 6,
+      foodImg: "https://www.sabornamesa.com.br/media/k2/items/cache/73cfa97422fce7916e3facf08ef108b3_XL.jpg"
+    },
+    {
+      id: 4,
+      foodName: "Empadão de Carne",
+      foodDetails: "Empadão de carne moída com condimentos",
+      foodPrice: 8,
+      foodImg: "https://www.pingodoce.pt/wp-content/uploads/2022/08/empadao-de-carne-com-batata-doce-pingo-doce.jpg"
+    },
+    {
+      id: 5,
+      foodName: "Hamburguer de Forno",
+      foodDetails: "Hamburguer de forno recheado com queijo cheedar",
+      foodPrice: 5.50,
+      foodImg: "https://cooknenjoy.com/wp-content/uploads/2022/09/Hamburgao-02-1200x901.jpg"
+    },
+    {
+      id: 6,
+      foodName: "Coxinha de Frango",
+      foodDetails: "Coxinha comum recheada de frango com condimentos",
+      foodPrice: 5,
+      foodImg: "https://ribeirao.emporiotartufo.com.br/image/cache/catalog/Irani-Maggiore/125523-COXINHA-FRANGO-SEM-GLUTEN-200G-IRANI-MAGGIORE-a-1000x667.jpg"
     }
   ]
 }
