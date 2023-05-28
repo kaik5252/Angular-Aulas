@@ -1,32 +1,61 @@
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item" *ngFor="let item of dataMovies.slice(0, 4)" [ngClass]="{'active': item.id === 1}">
-      <img src="../../../assets/img/{{ item.imagem }}" class="d-block w-100" alt="" />
+<div class="container">
+  <div id="carouselExampleAutoplaying" class="carousel slide"
+    data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let item of dataMovies.slice(0, 4)"
+        [ngClass]="{'active': item.id === 1}">
+        <img src="../../../assets/img/{{ item.imagem }}" class="d-block w-100"
+          alt />
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button"
+      data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button"
+      data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade">
-  <div class="carousel-inner">
-    <div class="carousel-item active" *ngFor="let item of dataMovies.slice(4, 8)"
-      [ngClass]="{'active': item.id === 5}">
-      <img src="../../../assets/img/{{ item.imagem }}" class="d-block w-100" alt="">
-    </div>
+<div class="card-filme">
+  <div class="box-filme" *ngFor="let dm of dataMovies.slice(0, 4)">
+    <img src="../../../assets/img/{{ dm.imagem }}" alt />
+    <h2>{{ dm.name }}</h2>
+    <p>{{ dm.sinopse }}</p>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+</div>
+
+<div class="container">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active"
+        *ngFor="let item of dataMovies.slice(4, 8)"
+        [ngClass]="{'active': item.id === 5}">
+        <img src="../../../assets/img/{{ item.imagem }}" class="d-block w-100"
+          alt>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button"
+      data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button"
+      data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="card-filme">
+  <div class="box-filme" *ngFor="let dm of dataMovies.slice(4, 8)">
+    <img src="../../../assets/img/{{ dm.imagem }}" alt />
+    <h2>{{ dm.name }}</h2>
+    <p>{{ dm.sinopse }}</p>
+  </div>
 </div>
