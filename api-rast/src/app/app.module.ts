@@ -8,11 +8,12 @@ import { FormsModule } from '@angular/forms';
 
 // Service
 import { ServicosService } from './service/servicos.service';
-ServicosService
+import { AlunosComponent } from './alunos/alunos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlunosComponent
   ],
   imports: [
     BrowserModule,
