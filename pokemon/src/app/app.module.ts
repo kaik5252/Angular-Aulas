@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pag/home/home.component';
 import { FooterComponent } from './pag/footer/footer.component';
+import { ViewComponent } from './pag/view/view.component';
 import { HeaderComponent } from './pag/header/header.component';
-
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './pag/search/search.component';
-import { ShinyComponent } from './pag/shiny/shiny.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +16,13 @@ import { ShinyComponent } from './pag/shiny/shiny.component';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    SearchComponent,
-    ShinyComponent
+    ViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

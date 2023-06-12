@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpPokService } from './http-pok.service';
+import { HttpPokeService } from './httpPoke.service';
 
-describe('HttpPokService', () => {
-  let service: HttpPokService;
+describe('HttpPokeService', () => {
+  let service: HttpPokeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpPokService);
+    service = TestBed.inject(HttpPokeService);
   });
 
   it('should be created', () => {

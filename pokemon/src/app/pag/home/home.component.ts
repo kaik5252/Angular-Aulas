@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpPokService } from 'src/app/service/http-pok.service';
+import { HttpPokeService } from 'src/app/service/httpPoke.service';
 
 @Component({
   selector: 'app-home',
@@ -7,40 +7,51 @@ import { HttpPokService } from 'src/app/service/http-pok.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  search: string = "";
+  searchFound: boolean = true;
   pokemonArray: Array<any> = new Array();
 
-  constructor(private service: HttpPokService) { }
+  constructor(private service: HttpPokeService) { }
 
   ngOnInit(): void {
-    this.listar();
+    this.listingPoke();
   }
 
-  listar() {
-    this.service.listar().subscribe(pokemon => {
-      this.service.next = pokemon.next;
-      console.log(pokemon);
-      for(let i = 0; i < pokemon.results.length; i++) {
-        this.detalhes(pokemon.results[i].url);
+  searchPoke() {
+    this.service.listingSearch(this.search).subscribe(pokemon => {
+      this.searchFound = true;
+      if(this.search !== "") {
+        this.pokemonArray = [];
+        this.pokemonArray.push(pokemon);
+      } else {
+        this.listingPoke();
       }
-    }, error => {
-      console.log("Erro ao listar os pokémons >>> ", error);
-    });
+    }, () => { this.searchFound = false; });
   }
 
-  listarMais() {
-    this.service.listarMais().subscribe(pokemon => {
-      console.log(pokemon);
+  listingPoke() {
+    this.service.listing().subscribe(pokemon => {
+      this.searchFound = true;
       this.service.next = pokemon.next;
-    }, error => {
-      console.log("Erro ao listar main pokémons >>> ", error);
+      this.pokemonArray = [];
+      for(let i = 0; i < pokemon.results.length; i++) {
+        this.getDetails(pokemon.results[i].url);
+      }
     });
   }
 
-  detalhes(url: any) {
+  moreListingPoke() {
+    this.service.moreListing().subscribe(pokemon => {
+      this.service.next = pokemon.next;
+      for(let i = 0; i < pokemon.results.length; i++) {
+        this.getDetails(pokemon.results[i].url);
+      }
+    });
+  }
+
+  getDetails(url: any) {
     this.service.getPokemon(url).subscribe(pokemon => {
       this.pokemonArray.push(pokemon);
-      console.log(this.pokemonArray);
     });
   }
 }
