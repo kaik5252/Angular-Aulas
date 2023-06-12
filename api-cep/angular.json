@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "api-rast": {
+    "api-cep": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/api-rast",
+            "outputPath": "dist/api-cep",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "api-rast:build:production"
+              "browserTarget": "api-cep:build:production"
             },
             "development": {
-              "browserTarget": "api-rast:build:development"
+              "browserTarget": "api-cep:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "api-rast:build"
+            "browserTarget": "api-cep:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "0190d587-8302-4fff-8467-e0891a322c73"
+    "analytics": "930e2b12-3c94-46e7-9347-48b750919fc5"
   }
 }
