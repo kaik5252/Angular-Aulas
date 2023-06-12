@@ -1,19 +1,47 @@
 <div class="view" *ngFor="let item of pokemonArray">
-    <table>
-        <thead>
-            <tr>
-
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-
-            </tr>
-        </tbody>
-    </table>
-    
-    <!-- {{ item.types[0].type.name }} -->
     <img src="{{ item.sprites.front_default }}" alt="Imagem do Pokémon {{ item.name }}" />
-    <p class="name">{{ item.name }}</p>
+
+    <table>
+        <tr>
+            <th>Experience: {{ item.base_experience }}</th>
+        </tr>
+
+        <tr>
+            <th>Altura: {{ item.height }}</th>
+            <th>Peso: {{ item.weight }}</th>
+        </tr>
+
+        <!-- Tipos do Pokémon -->
+        <tr>
+            <th>Tipo do Pokémon:</th>
+        </tr>
+
+        <tr>
+            <td *ngFor="let types of item.types">
+                {{ types.type.name }}
+            </td>
+        </tr>
+
+        <!-- Status do Pokémon -->
+        <tr>
+            <th>Status do Pokémon:</th>
+        </tr>
+
+        <tr *ngFor="let status of item.stats">
+            <td>
+                {{ status.stat.name }}: {{ status.base_stat }}
+            </td>
+        </tr>
+
+        <!-- Habilidades -->
+        <tr>
+            <th>Habilidades:</th>
+        </tr>
+
+        <tr>
+            <td *ngFor="let Habilidades of item.abilities">
+                {{ Habilidades.ability.name }}
+            </td>
+        </tr>
+    </table>
 </div>
