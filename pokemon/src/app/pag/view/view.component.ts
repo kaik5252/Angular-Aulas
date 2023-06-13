@@ -10,6 +10,7 @@ import { HttpPokeService } from 'src/app/service/httpPoke.service';
 export class ViewComponent implements OnInit {
   index: any;
   pokemonArray: Array<any> = new Array();
+  pokemonEvolution: Array<any> = new Array();
 
   constructor(private service: HttpPokeService, private route: ActivatedRoute) { }
 
@@ -19,12 +20,20 @@ export class ViewComponent implements OnInit {
     });
 
     this.listing();
+    this.evolution();
   }
 
   listing() {
-    this.service.listingPokemon(this.index).subscribe(pokemon => {
-      this.pokemonArray.push(pokemon);
-      console.log(pokemon);
+    this.service.listingPokemon(this.index).subscribe((e) => {
+      this.pokemonArray.push(e);
+      // console.log(e);
+    });
+  }
+
+  evolution() {
+    this.service.getEvolution(this.index).subscribe((e) => {
+      this.pokemonEvolution.push(e);
+      // console.log(e);
     });
   }
 }

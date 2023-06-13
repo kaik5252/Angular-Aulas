@@ -34,4 +34,8 @@ export class HttpPokeService {
   getType(url: any): Observable<any> {
     return this.http.get(url);
   }
+
+  getEvolution(index: any): Observable<any> {
+    return this.http.get(`${this.url}evolution-chain/${index}`);
+  }
 }

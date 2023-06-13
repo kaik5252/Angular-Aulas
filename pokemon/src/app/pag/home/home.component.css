@@ -124,7 +124,7 @@
 
 
 
-/* Cor de fundo de acordo com o tipo do pokémon ! Faltam steel e dragon ! */
+/* Define a cor de fundo apartir do tipo do pokémon   ! Faltam steel e dragon ! */
 .view .galery .box.grass {
     background-color: #2e722e;
     color: #dadada;

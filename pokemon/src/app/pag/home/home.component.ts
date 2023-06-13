@@ -19,14 +19,15 @@ export class HomeComponent implements OnInit {
 
   searchPoke() {
     this.service.listingSearch(this.search).subscribe(pokemon => {
-      this.searchFound = true;
-      if(this.search !== "") {
-        this.pokemonArray = [];
-        this.pokemonArray.push(pokemon);
-      } else {
+      if (this.search === "") {
         this.listingPoke();
+        return;
       }
-    }, () => { this.searchFound = false; });
+      this.searchFound = true;
+      this.pokemonArray = [];
+      this.pokemonArray.push(pokemon);
+
+    }, () => { this.searchFound = false; return; });
   }
 
   listingPoke() {
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
       this.searchFound = true;
       this.service.next = pokemon.next;
       this.pokemonArray = [];
-      for(let i = 0; i < pokemon.results.length; i++) {
+      for (let i = 0; i < pokemon.results.length; i++) {
         this.getDetails(pokemon.results[i].url);
       }
     });
@@ -43,7 +44,7 @@ export class HomeComponent implements OnInit {
   moreListingPoke() {
     this.service.moreListing().subscribe(pokemon => {
       this.service.next = pokemon.next;
-      for(let i = 0; i < pokemon.results.length; i++) {
+      for (let i = 0; i < pokemon.results.length; i++) {
         this.getDetails(pokemon.results[i].url);
       }
     });
