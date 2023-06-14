@@ -1,0 +1,38 @@
+form {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    border-radius: 14px;
+    background-color: rgba(84, 29, 136, 0.4);
+    display: block;
+    margin: 0 auto;
+}
+
+form h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+form .inputBox {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+form .inputBox .inputLabel {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    color: #000;
+}
+
+form .inputBox .inputText {
+    width: 100%;
+    height: 30px;
+    outline: none;
+}
+
+form .btn {
+    cursor: pointer;
+}
