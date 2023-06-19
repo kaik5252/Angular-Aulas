@@ -3,7 +3,7 @@ form {
     height: auto;
     padding: 20px;
     border-radius: 14px;
-    background-color: rgba(84, 29, 136, 0.4);
+    background-color: var(--bg2);
     display: block;
     margin: 0 auto;
 }
@@ -17,7 +17,6 @@ form .box-1 {
     position: relative;
     width: 100%;
     height: auto;
-    margin-top: 30px;
 
     display: flex;
     justify-content: space-between;
@@ -27,6 +26,7 @@ form .box-2 {
     position: relative;
     width: 48%;
     height: auto;
+    margin-top: 30px;
 }
 
 form .box-3 {
@@ -40,6 +40,13 @@ form .inputLabel {
     top: 5px;
     left: 6px;
     color: #000;
+    transition: all .2s ease;
+}
+
+form #dateLabel {
+    top: -21px;
+    left: 3px;
+    color: #fff;
 }
 
 form .inputText {
@@ -60,7 +67,29 @@ form .inputDate {
     text-indent: 6px;
 }
 
+form .inputText:focus ~ .inputLabel,
+form .inputText:valid ~ .inputLabel {
+    top: -21px;
+    left: 3px;
+    color: #fff;
+}
+
 form .btn {
+    height: 34px;
+    padding: 0 30px;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #000;
     cursor: pointer;
-    display: block;
+    display: inline-block;
+    margin-top: 30px;
+    transition: all .2s ease;
+}
+
+form .btn:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+form .btn:active {
+    transform: translate(5px, 5px);
 }
