@@ -14,15 +14,21 @@ export class SignupComponent {
   localidade: any;
   bairro: any;
   uf: any;
-  
+
   constructor(private bgService: BgService, private cepService: CepService) { }
 
   buscarCep() {
-    this.cepService.getCep(this.cep).subscribe((e) => {
-      this.logradouro = e.logradouro;
-      this.localidade = e.localidade;
-      this.bairro = e.bairro;
-      this.uf = e.uf;
-    });
+    if (this.cep.length == 8) {
+      this.cepService.getCep(this.cep).subscribe((e) => {
+        this.logradouro = e.logradouro;
+        this.localidade = e.localidade;
+        this.bairro = e.bairro;
+        this.uf = e.uf;
+      });
+    }
+  }
+
+  cadastrar() {
+    
   }
 }

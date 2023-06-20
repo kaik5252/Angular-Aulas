@@ -18,6 +18,6 @@ export class CepService {
   constructor(private http: HttpClient) { }
 
   getCep(cep: any): Observable<Cep> {
-    return this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json/`);
+    return this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json`);
   }
 }

@@ -1,19 +1,10 @@
 const service = require('./dbService');
 
 module.exports = {
-    listarDados: async (req, res) => {
+    listarCep: async (req, res) => {
         const data = {
-            table: "cepUser c, users u",
-            fields: [
-                "u.user_name as 'Nome'",
-                "u.user_nasc as 'Data de Nascimento'",
-                "u.user_cep as 'Cep'",
-                "c.cidade",
-                "c.bairro",
-                "c.rua",
-                "c.uf"
-            ],
-            aditional: "INNER JOIN category c ON f.category = c.id"
+            table: "cepUser",
+            aditional: "WHERE cep = "
         };
         const api = await service.readData(data);
         console.log(api);
@@ -24,6 +15,10 @@ module.exports = {
     adicionarDados: async (req, res) => {
         var name = req.body.name;
         var nasc = req.body.nasc;
+        var param = req.body;
+        console.log(param);
+
+        /*
         var cep = [
             req.body.cep,
             req.body.cidade,
@@ -37,7 +32,7 @@ module.exports = {
             values: cep
         };
         const api = await service.addData(data);
-        console.log(api);
+        console.log(api);*/
 
         /*
         if (api.affectedRows > 0) {
