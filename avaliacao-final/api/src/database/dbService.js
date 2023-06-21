@@ -27,6 +27,7 @@ module.exports = {
     try {
       const sql = `INSERT INTO ${data.table} (${data.fields.join(", ")}) VALUES (${data.fields.map(() => "?").join(", ")})`;
       conn = await connection();
+      console.log(sql);
 
       const [rows] = await conn.promise().query(sql, data.values);
       return rows;
@@ -64,50 +65,6 @@ module.exports = {
 
     } catch (error) {
       console.error("Erro na consulta no banco >>> ", error);
-      throw error;
-
-    } finally {
-      if (conn) {
-        conn.end();
-      }
-    }
-  },
-
-  // Atualizar um registro do banco
-  updateData: async (data) => {
-    var conn;
-
-    try {
-      const sql = `UPDATE ${data.table} SET ${data.fields.join(" = ?, ")} = ? WHERE ${data.where}`;
-      conn = await connection();
-
-      const [rows] = await conn.promise().query(sql, data.values);
-      return rows;
-
-    } catch (error) {
-      console.error("Erro ao atualizar registro >>> ", error);
-      throw error;
-
-    } finally {
-      if (conn) {
-        conn.end();
-      }
-    }
-  },
-
-  // Deletar um registro do banco
-  removeData: async (data) => {
-    var conn;
-
-    try {
-      const sql = `DELETE FROM ${data.table} WHERE ${data.where}`;
-      conn = await connection();
-
-      const [rows] = await conn.promise().query(sql, data.values);
-      return rows;
-
-    } catch (error) {
-      console.error("Erro ao deletar registro >>> ", error);
       throw error;
 
     } finally {

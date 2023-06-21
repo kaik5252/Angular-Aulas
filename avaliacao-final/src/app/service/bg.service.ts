@@ -8,11 +8,11 @@ import { UserModel } from './user.model';
 })
 export class BgService {
 
-  private url: string = "http://localhost:3000/api/";
+  private url: string = "http://localhost:3010/api/";
 
   constructor(private http: HttpClient) { }
 
-  listarUsuario(user: UserModel): Observable<any> {
+  createUser(user: UserModel): Observable<any> {
     return this.http.post(`${this.url}`, user);
   }
 }

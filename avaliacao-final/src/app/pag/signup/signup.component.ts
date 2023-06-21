@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BgService } from 'src/app/service/bg.service';
 import { CepService } from 'src/app/service/cep.service';
+import { UserModel } from 'src/app/service/user.model';
 
 @Component({
   selector: 'app-signup',
@@ -9,26 +10,25 @@ import { CepService } from 'src/app/service/cep.service';
 })
 export class SignupComponent {
 
-  cep: any;
-  logradouro: any;
-  localidade: any;
-  bairro: any;
-  uf: any;
+  user: UserModel = new UserModel();
+  msg: string = "";
 
   constructor(private bgService: BgService, private cepService: CepService) { }
 
   buscarCep() {
-    if (this.cep.length == 8) {
-      this.cepService.getCep(this.cep).subscribe((e) => {
-        this.logradouro = e.logradouro;
-        this.localidade = e.localidade;
-        this.bairro = e.bairro;
-        this.uf = e.uf;
+    if (this.user.cep.length == 8) {
+      this.cepService.getCep(this.user.cep).subscribe((e) => {
+        this.user.logradouro = e.logradouro;
+        this.user.localidade = e.localidade;
+        this.user.bairro = e.bairro;
+        this.user.uf = e.uf;
       });
     }
   }
 
   cadastrar() {
-    
+    this.bgService.createUser(this.user).subscribe((e) => {
+      this.msg = e.message;
+    });
   }
 }
