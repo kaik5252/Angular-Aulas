@@ -1,0 +1,22 @@
+{
+  "frutas": [
+    {
+      "id": 1,
+      "name": "Batata",
+      "price": 5.9,
+      "img": "https://www.restaurantefrutosdaterra.com.br/wp-content/uploads/2019/04/Surpreenda-se-com-curiosidades-sobre-a-batata-Frutos-da-Terra-Restaurante.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Abacate",
+      "price": 6.5,
+      "img": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/01/20/2127649884-receitas-com-abacate.jpg"
+    },
+    {
+      "img": "https://conteudo.imguol.com.br/c/entretenimento/0c/2020/05/12/maracuja-1589313482855_v2_1x1.jpg",
+      "price": "11.90",
+      "name": "Maracujá",
+      "id": 3
+    }
+  ]
+}

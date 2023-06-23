@@ -1,0 +1,37 @@
+<div class="add">
+    <h3>Adicionar Fruta</h3>
+    <p>Nome: <input type="text" name="name" [(ngModel)]="fruta.name" /></p>
+    <p>Valor: <input type="text" name="price" [(ngModel)]="fruta.price" /></p>
+    <p>Imagem: <input type="text" name="img" [(ngModel)]="fruta.img" /></p>
+    <button type="button" (click)="adicionar()">Adicionar</button>
+</div>
+
+<div class="view">
+    <h3>Lista de frutas</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Atualizar</td>
+                <td>Excluir</td>
+                <td>Nome</td>
+                <td>Valor</td>
+                <td>Imagem</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of frutaArray">
+                <td>
+                    <button type="button" (click)="atualizar(item.id)">Atualizar</button>
+                </td>
+                <td>
+                    <button type="button" (click)="excluir(item.id)">Excluir</button>
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    <img src="{{ item.img }}" alt="" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

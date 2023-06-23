@@ -1,0 +1,43 @@
+img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.card-filme {
+    width: 87%;
+    height: auto;
+    margin: 50px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2vw;
+}
+
+.card-filme .box-filme {
+    width: 22%;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px 10px 0;
+    background-color: #3a3a3a;
+}
+
+.card-filme .box-filme img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-filme .box-filme p {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.card-filme .box-filme h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 6px 0;
+}

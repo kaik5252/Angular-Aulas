@@ -1,0 +1,40 @@
+<div class="container">
+    <form>
+        <h2>Contato</h2>
+        <p>Dê sua opinião sobre qual filme deverá entrar no catalogo.</p>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nome Completo</label>
+            <input type="text" class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Nome Sobrenome" name="name" [(ngModel)]="name"
+                required />
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Endereço de E-mail</label>
+            <input type="email" class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="nome@exemplo.com" name="email" [(ngModel)]="email"
+                required />
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nome do Filme</label>
+            <input type="text" class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Aquaman" name="filme" [(ngModel)]="filme" required />
+        </div>
+
+        <button type="button" class="btn btn-outline-danger"
+            (click)="onClickAdd()">Enviar</button>
+    </form>
+</div>
+
+<div class="container">
+    <div *ngFor="let contato of contatoList">
+        <h3>Informações de Contato:</h3>
+        <p>Nome: {{ contato.nome }}</p>
+        <p>Email: {{ contato.email }}</p>
+        <p>Filme: {{ contato.filme }}</p>
+    </div>
+</div>

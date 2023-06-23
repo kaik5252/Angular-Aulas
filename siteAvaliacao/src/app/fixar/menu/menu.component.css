@@ -1,0 +1,10 @@
+nav {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+nav .navbar-brand {
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0 10px;
+}

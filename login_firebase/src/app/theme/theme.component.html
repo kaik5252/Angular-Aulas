@@ -1,0 +1,23 @@
+<header><h1>{{siteName}}</h1></header>
+
+<nav>
+    <a routerLink="home" title="Página inicial" routerLinkActive="active" ariaCurrentWhenActive="page">Início</a> &nbsp;
+    <span *ngIf="user; then userProfile else userLogin"></span>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer>
+    &copy; 2023 Todos os Direitos Reservados
+</footer>
+
+<ng-template #userLogin>
+    <a routerLink="/login" id="user" title="Perfil do usuário" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Login
+    </a>
+</ng-template>
+<ng-template #userProfile>
+    <a routerLink="/profile" id="user" title="Perfil do usuário" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <img src="{{user.photoURL}}" alt="Perfil de {{user.displayName}}" referrerpolicy="no-referrer">
+    </a>
+</ng-template>
