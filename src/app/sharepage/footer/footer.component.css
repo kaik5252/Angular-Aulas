@@ -54,14 +54,19 @@ footer .box .social {
     justify-content: space-evenly;
 }
 
+footer .box .social a {
+    cursor: default;
+}
+
 footer .box .social a img {
     width: 25px;
     height: 25px;
     object-fit: cover;
+    cursor: pointer;
     transition: all .2s linear;
 }
 
-footer .box .social a:hover img {
+footer .box .social a img:hover {
     transform: scale(1.26);
 }
 

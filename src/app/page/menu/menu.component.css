@@ -1,0 +1,69 @@
+.cardapio {
+    width: 100%;
+    height: auto;
+    margin: 50px 0 100px 0;
+}
+
+.cardapio h1 {
+    font-weight: 600;
+    text-align: center;
+}
+
+.cardapio .container {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2vw;
+}
+
+.cardapio .container .box {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.cardapio .container .box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cardapio .container .box h2,
+.cardapio .container .box p {
+    font-size: 1.125rem;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cardapio .container .box h2 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.cardapio .container .box p.price {
+    text-align: left;
+    margin-top: auto;
+    color: #f00a;
+}
+
+.cardapio button {
+    width: 100px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #46a146;
+    color: #fff;
+    margin: 26px 0 20px 2.6%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
